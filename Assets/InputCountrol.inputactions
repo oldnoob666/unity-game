@@ -1,0 +1,94 @@
+{
+    "name": "InputCountrol",
+    "maps": [
+        {
+            "name": "GamePlayerControl",
+            "id": "f0ff95e9-9cac-4617-9de4-cff70fba2794",
+            "actions": [
+                {
+                    "name": "PlayerDirRight",
+                    "type": "Button",
+                    "id": "5cbf9beb-24f5-41dd-bbba-93d010fffe24",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "PlayerDirLeft",
+                    "type": "Button",
+                    "id": "feaf44cc-be14-464f-b1c7-9f7540a19858",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlayerDirPos",
+                    "type": "Button",
+                    "id": "2eb8dc3a-e3b1-4602-b37e-25213a5de05e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Launch",
+                    "type": "Button",
+                    "id": "73c8381d-9428-4a47-90cf-0c0e909e3f00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "96da252e-b958-416a-8953-a2b60d634387",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerDirRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8dc1bcc-a83d-4ba1-a7cd-d9ea2d090db1",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerDirLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44ad1e6f-610f-4dd0-8e40-e62c25bc8377",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerDirPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac8309ff-2b4d-4430-ba12-a706b876599a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
