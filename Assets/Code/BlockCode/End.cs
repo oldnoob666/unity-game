@@ -6,6 +6,6 @@ public class End : MonoBehaviour, IBulletHittable
 {
      public void OnBulletHit(Bullet bullet)
     {
-        Debug.Log("Bullet hit the end point");
+        Debug.Log("Bullet hit the end point");  
     }
 }
