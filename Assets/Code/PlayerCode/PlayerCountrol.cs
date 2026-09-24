@@ -35,6 +35,7 @@ public class PlayerCountrol : MonoBehaviour
     public void LeftDir(InputAction.CallbackContext context)
     {
         transform.rotation = Quaternion.Euler(0, 90, 0);
+        
     }
 
 

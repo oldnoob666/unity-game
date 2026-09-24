@@ -18,17 +18,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("End"))
+       IBulletHittable target = other.GetComponent<IBulletHittable>();
+        if (target != null)
         {
-            //TODO:触发结束游戏事件
-        }
-        if (other.CompareTag("Left"))
-        {
-            //TODO:触发左转
-        }
-        if (other.CompareTag("Right"))
-        {
-            //TODO:触发右转
+            target.OnBulletHit(this);
         }
     }
 }
