@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d056f53f65c2a2349b0c66be956aa069, type: 3}
+  m_Name: Object Data Base SO
+  m_EditorClassIdentifier: 
+  objectDatas:
+  - <Name>k__BackingField: RightBlock
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 1151594899061752395, guid: 38340f39e807c8e48856a9c9ffd0e1cf, type: 3}
+  - <Name>k__BackingField: LeftBlock
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 5938622318721955596, guid: fceea644132a44a48b1a7a98badbf011, type: 3}
+  - <Name>k__BackingField: DownBlock
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 5938622318721955596, guid: 2ebcf1d9d2fc1924ca5ac82259a76d8c, type: 3}

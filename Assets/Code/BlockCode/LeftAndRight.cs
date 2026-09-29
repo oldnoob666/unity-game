@@ -13,15 +13,8 @@ public class LeftAndRight : MonoBehaviour, IBulletHittable
 
     public void OnBulletHit(Bullet bullet)
     {
-        //Debug.Log("Bullet hit LeftAndRight");
-        if (turnDir == TurnDir.Left)
-        {
-            //Debug.Log("Bullet hit LeftAndRight: Left");
-            bullet.transform.Rotate(0, 90, 0);
-        }
-        else if (turnDir == TurnDir.Right)
-        {
-            bullet.transform.Rotate(0, -90, 0);
-        }
+        //Debug.Log("Bullet hit LeftAndRight");   
+        if (bullet == null) return;
+        bullet.transform.rotation = transform.rotation;
     }
 }

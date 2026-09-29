@@ -57,7 +57,25 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Launch"",
                     ""type"": ""Button"",
+                    ""id"": ""72d5e21c-392d-47e0-ad85-3ead31a43879"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
                     ""id"": ""73c8381d-9428-4a47-90cf-0c0e909e3f00"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""exit"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e4ab913-098d-4ed7-838b-f92e50a3b549"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -101,11 +119,33 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ac8309ff-2b4d-4430-ba12-a706b876599a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7f48667-5f7a-43e6-825c-6cd814e54d2b"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Launch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b01562f-19e2-4954-9a99-8eae33c1288d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -120,6 +160,8 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
         m_GamePlayerControl_PlayerDirLeft = m_GamePlayerControl.FindAction("PlayerDirLeft", throwIfNotFound: true);
         m_GamePlayerControl_PlayerDirPos = m_GamePlayerControl.FindAction("PlayerDirPos", throwIfNotFound: true);
         m_GamePlayerControl_Launch = m_GamePlayerControl.FindAction("Launch", throwIfNotFound: true);
+        m_GamePlayerControl_Click = m_GamePlayerControl.FindAction("Click", throwIfNotFound: true);
+        m_GamePlayerControl_exit = m_GamePlayerControl.FindAction("exit", throwIfNotFound: true);
     }
 
     ~@InputCountrol()
@@ -190,6 +232,8 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
     private readonly InputAction m_GamePlayerControl_PlayerDirLeft;
     private readonly InputAction m_GamePlayerControl_PlayerDirPos;
     private readonly InputAction m_GamePlayerControl_Launch;
+    private readonly InputAction m_GamePlayerControl_Click;
+    private readonly InputAction m_GamePlayerControl_exit;
     public struct GamePlayerControlActions
     {
         private @InputCountrol m_Wrapper;
@@ -198,6 +242,8 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
         public InputAction @PlayerDirLeft => m_Wrapper.m_GamePlayerControl_PlayerDirLeft;
         public InputAction @PlayerDirPos => m_Wrapper.m_GamePlayerControl_PlayerDirPos;
         public InputAction @Launch => m_Wrapper.m_GamePlayerControl_Launch;
+        public InputAction @Click => m_Wrapper.m_GamePlayerControl_Click;
+        public InputAction @exit => m_Wrapper.m_GamePlayerControl_exit;
         public InputActionMap Get() { return m_Wrapper.m_GamePlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -219,6 +265,12 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
             @Launch.started += instance.OnLaunch;
             @Launch.performed += instance.OnLaunch;
             @Launch.canceled += instance.OnLaunch;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @exit.started += instance.OnExit;
+            @exit.performed += instance.OnExit;
+            @exit.canceled += instance.OnExit;
         }
 
         private void UnregisterCallbacks(IGamePlayerControlActions instance)
@@ -235,6 +287,12 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
             @Launch.started -= instance.OnLaunch;
             @Launch.performed -= instance.OnLaunch;
             @Launch.canceled -= instance.OnLaunch;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @exit.started -= instance.OnExit;
+            @exit.performed -= instance.OnExit;
+            @exit.canceled -= instance.OnExit;
         }
 
         public void RemoveCallbacks(IGamePlayerControlActions instance)
@@ -258,5 +316,7 @@ public partial class @InputCountrol: IInputActionCollection2, IDisposable
         void OnPlayerDirLeft(InputAction.CallbackContext context);
         void OnPlayerDirPos(InputAction.CallbackContext context);
         void OnLaunch(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnExit(InputAction.CallbackContext context);
     }
 }
