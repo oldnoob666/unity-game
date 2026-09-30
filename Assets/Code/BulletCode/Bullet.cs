@@ -18,6 +18,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("111");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        {
+            
+            Destroy(gameObject);
+        }
        IBulletHittable target = other.GetComponent<IBulletHittable>();
         if (target != null)
         {
