@@ -16,14 +16,6 @@ public class InputSystem : MonoBehaviour
     private int selectedObjectIndex = -1;
     public GameObject placementModle;
 
-    [Header("临时测试用，验证完可以删掉")]
-    [SerializeField]
-    private bool enableTestHotkey = true;//勾上后按B键进入放置模式
-    [SerializeField]
-    private int testPlacementID = 0;//测试用的物体ID
-
-
-
     private void Start()
     {
         StopPlacement();
@@ -75,20 +67,11 @@ public class InputSystem : MonoBehaviour
     }
     private void Update()
     {
-        TestHotkey();
-        if(selectedObjectIndex < 0) return;
+        
         Vector3 mousePos = inputManager.GetSelctedMapPosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePos);//将鼠标位置转换为网格坐标
         mouseIndicator.transform.position = mousePos;//
+        if (selectedObjectIndex < 0) return;
         cellIndicator.transform.position = grid.GetCellCenterWorld(gridPosition);//将网格坐标转换为世界坐标，并将其赋值给网格指示器的位置
-    }
-
-    private void TestHotkey()//临时测试：按B键进入放置模式，用来验证鼠标点击事件有没有触发
-    {
-        if(!enableTestHotkey) return;
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-            StartPlacement(testPlacementID);
-        }
     }
 }

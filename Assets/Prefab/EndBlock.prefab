@@ -362,3 +362,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc46b1127f0adb7429d593ad9d5070f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gUI: {fileID: 0}
+  winUI: {fileID: 0}
+  camera: {fileID: 0}
+  levels:
+  - {x: 1, y: 1, z: 1}
+  - {x: 14.07, y: 0.3, z: 3.938}
+  - {x: 28.518, y: 0.3, z: 3.938}
+  player: {fileID: 0}
+  bullet1: {fileID: 2344316673944728563, guid: 9fc392d64bafbbe41b2e52c2b116bf95, type: 3}

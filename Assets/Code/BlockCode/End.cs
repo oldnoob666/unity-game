@@ -7,7 +7,9 @@ public class End : MonoBehaviour, IBulletHittable
     public GameObject gUI;
     public GameObject winUI;
     public Camera camera;
-    public List<GameObject>levels = new List<GameObject>(); 
+    public List<Vector3>levels = new List<Vector3>();
+    public GameObject player;
+    private int i;
     
     public void OnBulletHit(Bullet bullet)
     {
@@ -18,8 +20,11 @@ public class End : MonoBehaviour, IBulletHittable
 
     public void NextLevel()
     {
-
-        camera.transform.position += new Vector3(15.9f, 0f, 0f);
+        i++;
+        
+        player.transform.position = new Vector3(levels[i].x, levels[i].y, levels[i].z);
+        camera.transform.position += new Vector3(15.61f, 0f, 0f);
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
         gUI.SetActive(true);
         winUI.SetActive(false);
