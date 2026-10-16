@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
 {
@@ -16,7 +17,6 @@ public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
     public Camera camera;
     public List<Vector3> levels = new List<Vector3>();
     public GameObject player;
-    private int i;
 
     private void OnEnable()
     {
@@ -37,12 +37,14 @@ public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
     }
     public void NextLevel()
     {
-        i++;
-        player.transform.position = new Vector3(levels[i].x, levels[i].y, levels[i].z);
-        camera.transform.position += new Vector3(15.61f, 0f, 0f);
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            return;
+        }
+
         Time.timeScale = 1f;
-        gUI.SetActive(true);
-        winUI.SetActive(false);
+        SceneManager.LoadScene(nextSceneIndex, LoadSceneMode.Single);
     }
 
     public void OnClick()

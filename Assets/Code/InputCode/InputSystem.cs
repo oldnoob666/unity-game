@@ -28,8 +28,8 @@ public class InputSystem : MonoBehaviour
             Debug.LogError($"[InputSystem] 物体数据库没赋值或者是空的，请先在 Object Data Base SO 里添加 ObjectData（传入的 ID={ID}）");
             return;
         }
-        selectedObjectIndex = dataBaseSO.objectDatas.FindIndex(obj => obj.ID == ID);//根据ID查找物体在列表中的索引
-        if(selectedObjectIndex < 0)
+        selectedObjectIndex = dataBaseSO.objectDatas.FindIndex(obj => obj.ID == ID);//是一个 Lambda 表达式，表示“检查每个对象的 ID 是否等于当前的 ID”。
+        if (selectedObjectIndex < 0)
         {
             Debug.LogError($"No found ID {ID}");
             return;
