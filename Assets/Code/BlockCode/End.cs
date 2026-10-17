@@ -11,7 +11,8 @@ public class End : MonoBehaviour, IBulletHittable
 
     public void OnBulletHit(Bullet bullet)
     {
-        endEvent.EventRised(gameObject);
+        endEvent.EventRised();
+        gameObject.SetActive(false);
     }
 
 

@@ -6,10 +6,10 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "Event/CharacterEventSO")]
 public class EndEventSO : ScriptableObject
 {
-    public UnityAction<GameObject> OnEnd;
+    public UnityAction OnEnd;
 
-    public void EventRised(GameObject obj)//在End.cs里触发
+    public void EventRised()//在End.cs里触发
     {
-        OnEnd?.Invoke(obj);
+        OnEnd?.Invoke();
     }
 }

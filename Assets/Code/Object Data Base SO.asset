@@ -29,3 +29,11 @@ MonoBehaviour:
     <ID>k__BackingField: 3
     <Size>k__BackingField: {x: 1, y: 1}
     <Prefab>k__BackingField: {fileID: 9210864471751265911, guid: 4a46a23cf7e5b8b45b6d22701911ade3, type: 3}
+  - <Name>k__BackingField: Cross-SplitBlock
+    <ID>k__BackingField: 4
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 7363961183503165078, guid: 218076ae27ef95742bdadf13e3e929e6, type: 3}
+  - <Name>k__BackingField: vertical-SplitBlock
+    <ID>k__BackingField: 5
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 1827491716606070937, guid: 7dd31e51fe40c9f44a406feb5f162189, type: 3}

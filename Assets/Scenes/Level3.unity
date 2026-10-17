@@ -517,7 +517,7 @@ Transform:
   m_GameObject: {fileID: 218752726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.571716, y: 0.3, z: 3.8916547}
+  m_LocalPosition: {x: -2.6753843, y: 0.3, z: 3.8916547}
   m_LocalScale: {x: 0.35010713, y: 0.33103484, z: 0.36615515}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2070,7 +2070,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 46.73, y: 5.424, z: -6.364}
+  m_LocalPosition: {x: -0.1, y: 5.424, z: -6.364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2475,7 +2475,7 @@ Transform:
   m_GameObject: {fileID: 1219975137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.85, y: -1.4915218, z: 0.30324242}
+  m_LocalPosition: {x: 3.6028998, y: -1.4915218, z: 0.30324242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3100,7 +3100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1413431489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4368,14 +4368,8 @@ MonoBehaviour:
   gUI: {fileID: 369120479}
   winUI: {fileID: 2117794476}
   firstUI: {fileID: 340277983}
-  camera: {fileID: 963194227}
-  levels:
-  - {x: 1, y: 1, z: 1}
-  - {x: 14.111, y: 0.29900002, z: 3.889}
-  - {x: 28.554, y: 0.3, z: 3.918}
-  - {x: 43.571716, y: 0.3, z: 3.8916547}
-  - {x: 0, y: 0, z: 0}
-  player: {fileID: 218752726}
+  winIndex: 1
+  i: 0
 --- !u!4 &1925883083
 Transform:
   m_ObjectHideFlags: 0
@@ -4776,8 +4770,8 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 218752727}
-  - {fileID: 1849121817}
   - {fileID: 1305618156}
+  - {fileID: 1849121817}
   - {fileID: 718731505}
   - {fileID: 1925883083}
   - {fileID: 1219975138}

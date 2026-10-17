@@ -13,10 +13,8 @@ public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
     public GameObject gUI;
     public GameObject winUI;
     public GameObject firstUI;
-    [Header("关卡切换设置")]
-    public Camera camera;
-    public List<Vector3> levels = new List<Vector3>();
-    public GameObject player;
+    public int winIndex;
+    public int i;       
 
     private void OnEnable()
     {
@@ -28,12 +26,16 @@ public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
     }
 
 
-    private void OnWin(GameObject obj)
+    private void OnWin()
     {
-        gUI.SetActive(false);
-        winUI.SetActive(true);
-        Time.timeScale = 0f;
-        obj.SetActive(false);
+        if (i == winIndex-1)
+        {
+            gUI.SetActive(false);
+            winUI.SetActive(true);
+            Time.timeScale = 0f;
+            
+        }
+        else i++;
     }
     public void NextLevel()
     {
