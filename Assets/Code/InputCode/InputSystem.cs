@@ -14,14 +14,13 @@ public class InputSystem : MonoBehaviour
     [SerializeField]
     private ObjectDataBaseSO dataBaseSO;
     private int selectedObjectIndex = -1;
-    public GameObject placementModle;
 
     private void Start()
     {
         StopPlacement();
     }
 
-    public void StartPlacement(int ID)
+    public void StartPlacement(int ID)//通过按钮启动，ID在按钮页填入
     {   
         if(dataBaseSO == null || dataBaseSO.objectDatas == null || dataBaseSO.objectDatas.Count == 0)
         {
@@ -34,13 +33,6 @@ public class InputSystem : MonoBehaviour
             Debug.LogError($"No found ID {ID}");
             return;
         }
-        if(placementModle == null)
-        {
-            Debug.LogError("InputSystem: 没有赋值 placementModle（放置预览模型）");
-            selectedObjectIndex = -1;
-            return;
-        }
-        placementModle.SetActive(true);
         inputManager.OnClicked -= PlaceStructure;//先退订再订阅，避免重复调用StartPlacement时一次点击放多个
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit -= StopPlacement;
@@ -61,7 +53,6 @@ public class InputSystem : MonoBehaviour
     public void StopPlacement()
     {
         selectedObjectIndex = -1;
-        if(placementModle != null) placementModle.SetActive(false);
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
     }

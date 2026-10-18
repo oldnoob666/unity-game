@@ -12,6 +12,7 @@ public class End : MonoBehaviour, IBulletHittable
     public void OnBulletHit(Bullet bullet)
     {
         endEvent.EventRised();
+        Destroy(bullet.gameObject);
         gameObject.SetActive(false);
     }
 

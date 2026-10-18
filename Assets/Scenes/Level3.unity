@@ -1054,7 +1054,6 @@ MonoBehaviour:
   inputManager: {fileID: 1390523612}
   grid: {fileID: 752685313}
   dataBaseSO: {fileID: 11400000, guid: 4e56fa4fafd9bfe4db83b5183627a3ed, type: 2}
-  placementModle: {fileID: 7140000000000000001, guid: b889cd8fdc41461da720412be14c67d6, type: 3}
 --- !u!1 &460308116
 GameObject:
   m_ObjectHideFlags: 0
