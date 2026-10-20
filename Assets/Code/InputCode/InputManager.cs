@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour//用来获取鼠标地图位置的脚本
     private Vector3 lastPosition;//记录上一次鼠标的位置
     [SerializeField]
     private LayerMask layerMask;
+    [SerializeField]
+    private LayerMask blockLayerMask;
 
     public event Action OnClicked, OnExit;//声明一个点击事件和退出事件
     public InputCountrol inputCountrol;
@@ -52,5 +54,25 @@ public class InputManager : MonoBehaviour//用来获取鼠标地图位置的脚本
 
         return lastPosition;
     }
+
+     public GameObject GetObjectUnderMouse()//获取鼠标下的物体,进行删除
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = sceneCamera.nearClipPlane;
+        Ray ray = sceneCamera.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100, blockLayerMask))
+        {
+            Transform block = hit.collider.transform;
+            while (block.parent != null && (blockLayerMask.value & (1 << block.parent.gameObject.layer)) != 0)
+            {
+                block = block.parent;
+            }
+            return block.gameObject;
+        }
+        return null;
+    }
+    
+
 
 }

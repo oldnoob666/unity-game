@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4130893339507134455}
   - component: {fileID: 5562332052646295002}
   - component: {fileID: 3366742404127852151}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8356978768670313818}
   - component: {fileID: 874445560667205770}
   - component: {fileID: 479275502212959892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightBlock
   m_TagString: End
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6454944337760609252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 5956472638579740212}
   - component: {fileID: 3674049174487853955}
   - component: {fileID: 233685306513951089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 7640889427177129722}
   - component: {fileID: 3517275926158882430}
   - component: {fileID: 7941245849121962924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
