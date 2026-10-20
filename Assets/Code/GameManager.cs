@@ -53,4 +53,15 @@ public class GameManager : MonoBehaviour//管理UI，相机移动，玩家移动位置
     {
         firstUI.SetActive(false);
     }
+
+
+    public void QuitGame()
+    {
+       #if UNITY_EDITOR
+           UnityEditor.EditorApplication.isPlaying = false;
+       #else
+         Application.Quit();
+       #endif
+    }
+
 }
